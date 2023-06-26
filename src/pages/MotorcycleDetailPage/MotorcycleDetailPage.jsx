@@ -1,4 +1,4 @@
-import './OrderHistoryPage.css'
+import './MotorcycleDetailPage.css'
 import { checkToken } from '../../utilities/users-service'
 
 export default function OrderHistoryPage() {

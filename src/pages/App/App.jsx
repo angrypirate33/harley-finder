@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import NewOrderPage from '../NewOrderPage/NewOrderPage'
 import AuthPage from '../AuthPage/AuthPage'
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage'
 import Nav  from '../../components/Nav/Nav'
+import IndexPage from '../IndexPage/IndexPage'
+import WishlistPage from '../WishlistPage/WishlistPage'
 import { getUser } from '../../utilities/users-service'
 
 
@@ -17,8 +17,8 @@ export default function App() {
         <>
           <Nav user={user} setUser={setUser} />
           <Routes>
-            <Route path='/orders/new' element={<NewOrderPage />} />
-            <Route path='/orders' element={<OrderHistoryPage />} />
+            <Route path='/' element={<IndexPage />} />
+            <Route path='/wishlist' element={<WishlistPage />} />
           </Routes>
         </>
         : 

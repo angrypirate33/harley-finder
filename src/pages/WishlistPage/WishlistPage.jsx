@@ -1,8 +1,8 @@
-import './NewOrderPage.css'
+import './WishlistPage.css'
 
-export default function NewOrderPage() {
+export default function WishlistPage() {
   
     return (
-      <h1>NewOrderPage</h1>
+      <h1>WishlistPage</h1>
     )
   }
