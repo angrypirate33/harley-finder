@@ -9,9 +9,9 @@ export default function Nav({ user, setUser }) {
 
     return (
         <nav>
-            <Link to='/orders'>Order History</Link>
+            <Link to='/'>All Harleys</Link>
             &nbsp; | &nbsp;
-            <Link to='/orders/new'>New Order</Link>
+            <Link to='/wishlist'>Your Wishlists</Link>
             &nbsp;&nbsp;<span>Welcome, {user.name}</span>
             &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
         </nav>
