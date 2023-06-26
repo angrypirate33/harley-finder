@@ -3,7 +3,7 @@ require('./config/database')
 
 const Motorcycle = require('./models/motorcycle')
 
-(async function() {
+async function seedDb() {
 
     await Motorcycle.deleteMany({})
 
@@ -40505,4 +40505,6 @@ const Motorcycle = require('./models/motorcycle')
 
     process.exit()
 
-})()
+}
+
+seedDb()

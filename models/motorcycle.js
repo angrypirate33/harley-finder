@@ -125,6 +125,9 @@ const motorcycleSchema = new Schema({
     starter: {
       type: String
     }
+  }, {
+    timestamps: true,
+    toJSON: { virtuals: true }
   })
 
   module.exports = mongoose.model('Motorcycle', motorcycleSchema)
