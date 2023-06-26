@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const motorcycleSchema = new Schema({
     make: String,
     model: String,
-    year: Number,
+    year: String,
     type: String,
     displacement: String,
     engine: String,
@@ -13,7 +13,7 @@ const motorcycleSchema = new Schema({
     top_speed: String,
     compression: String,
     bore_stroke: String,
-    valves_per_cylinder: Number,
+    valves_per_cylinder: String,
     fuel_system: String,
     fuel_control: String,
     ignition: String,
