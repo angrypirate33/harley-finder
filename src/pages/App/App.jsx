@@ -5,6 +5,7 @@ import AuthPage from '../AuthPage/AuthPage'
 import Nav  from '../../components/Nav/Nav'
 import IndexPage from '../IndexPage/IndexPage'
 import WishlistPage from '../WishlistPage/WishlistPage'
+import AboutPage from '../AboutPage/AboutPage'
 import { getUser } from '../../utilities/users-service'
 
 
@@ -19,6 +20,7 @@ export default function App() {
           <Routes>
             <Route path='/' element={<IndexPage />} />
             <Route path='/wishlist' element={<WishlistPage />} />
+            <Route path='/about' element={<AboutPage />} />
           </Routes>
         </>
         : 
