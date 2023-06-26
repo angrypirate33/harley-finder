@@ -7,7 +7,7 @@ const Motorcycle = require('./models/motorcycle')
 
     await Motorcycle.deleteMany({})
 
-    const motorcycles = await Motorcycle.create(
+    await Motorcycle.create(
         [
             {
                 make: "Harley-Davidson",
@@ -40504,4 +40504,5 @@ const Motorcycle = require('./models/motorcycle')
     )
 
     process.exit()
+
 })()

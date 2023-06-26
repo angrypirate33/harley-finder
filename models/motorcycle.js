@@ -2,47 +2,129 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const motorcycleSchema = new Schema({
-    make: String,
-    model: String,
-    year: String,
-    type: String,
-    displacement: String,
-    engine: String,
-    power: String,
-    torque: String,
-    top_speed: String,
-    compression: String,
-    bore_stroke: String,
-    valves_per_cylinder: String,
-    fuel_system: String,
-    fuel_control: String,
-    ignition: String,
-    lubrication: String,
-    cooling: String,
-    gearbox: String,
-    transmission: String,
-    clutch: String,
-    fuel_consumption: String,
-    emission: String,
-    frame: String,
-    front_suspension: String,
-    front_wheel_travel: String,
-    rear_suspension: String,
-    rear_wheel_travel: String,
-    front_tire: String,
-    rear_tire: String,
-    front_brakes: String,
-    rear_brakes: String,
-    dry_weight: String,
-    total_weight: String,
-    seat_height: String,
-    total_height: String,
-    total_length: String,
-    total_width: String,
-    ground_clearance: String,
-    wheelbase: String,
-    fuel_capacity: String,
-    starter: String
+    make: {
+      type: String
+    },
+    model: {
+      type: String
+    },
+    year: {
+      type: String
+    },
+    type: {
+      type: String
+    },
+    displacement: {
+      type: String
+    },
+    engine: {
+      type: String
+    },
+    power: {
+      type: String
+    },
+    torque: {
+      type: String
+    },
+    top_speed: {
+      type: String
+    },
+    compression: {
+      type: String
+    },
+    bore_stroke: {
+      type: String
+    },
+    valves_per_cylinder: {
+      type: String
+    },
+    fuel_system: {
+      type: String
+    },
+    fuel_control: {
+      type: String
+    },
+    ignition: {
+      type: String
+    },
+    lubrication: {
+      type: String
+    },
+    cooling: {
+      type: String
+    },
+    gearbox: {
+      type: String
+    },
+    transmission: {
+      type: String
+    },
+    clutch: {
+      type: String
+    },
+    fuel_consumption: {
+      type: String
+    },
+    emission: {
+      type: String
+    },
+    frame: {
+      type: String
+    },
+    front_suspension: {
+      type: String
+    },
+    front_wheel_travel: {
+      type: String
+    },
+    rear_suspension: {
+      type: String
+    },
+    rear_wheel_travel: {
+      type: String
+    },
+    front_tire: {
+      type: String
+    },
+    rear_tire: {
+      type: String
+    },
+    front_brakes: {
+      type: String
+    },
+    rear_brakes: {
+      type: String
+    },
+    dry_weight: {
+      type: String
+    },
+    total_weight: {
+      type: String
+    },
+    seat_height: {
+      type: String
+    },
+    total_height: {
+      type: String
+    },
+    total_length: {
+      type: String
+    },
+    total_width: {
+      type: String
+    },
+    ground_clearance: {
+      type: String
+    },
+    wheelbase: {
+      type: String
+    },
+    fuel_capacity: {
+      type: String
+    },
+    starter: {
+      type: String
+    }
   })
 
   module.exports = mongoose.model('Motorcycle', motorcycleSchema)
