@@ -23,6 +23,8 @@ app.use(express.json())
 	
  // Put API routes here, before the "catch all" route
  app.use('/api/users', require('./routes/api/users'))
+ app.use('/api/motorcycles', require('./routes/api/motorcycles'))
+ app.use('/api/wishlists', require('./routes/api/wishlists'))
  
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
