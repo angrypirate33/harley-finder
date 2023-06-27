@@ -30,13 +30,13 @@ export default function MotorcycleSearchPage() {
                         <Link to={`/motorcycles/${motorcycle._id}`}>
                             <div className='card orange'>
                                 <div className='card-content'>
-                                    <span className='card-title black-text' id='searchTitle'>{motorcycle.year} {motorcycle.model}</span>
+                                    <span className='card-title black-text truncate' id='searchTitle'>{motorcycle.year} {motorcycle.model}</span>
                                     <ul>
-                                    <li className='black-text'>Type: {motorcycle.type}</li>
-                                    <li className='black-text'>Displacement: {motorcycle.displacement}</li>
-                                    <li className='black-text'>Power: {motorcycle.power}</li>
-                                    <li className='black-text'>Gearbox: {motorcycle.gearbox}</li>
-                                    <li className='black-text'>Seat Height: {motorcycle.seat_height}</li>
+                                    <li className='black-text truncate'>Type: {motorcycle.type}</li>
+                                    <li className='black-text truncate'>Displacement: {motorcycle.displacement}</li>
+                                    <li className='black-text truncate'>Power: {motorcycle.power}</li>
+                                    <li className='black-text truncate'>Gearbox: {motorcycle.gearbox}</li>
+                                    <li className='black-text truncate'>Seat Height: {motorcycle.seat_height}</li>
                                     </ul>
                                 </div>
                             </div>
