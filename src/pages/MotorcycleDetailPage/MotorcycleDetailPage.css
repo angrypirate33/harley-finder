@@ -1,0 +1,12 @@
+#detailsTitle {
+    font-weight: bold;
+}
+
+.detailHeader {
+    font-weight: bold;
+}
+
+#detailCard {
+    display: flex;
+    justify-content: center;
+}
