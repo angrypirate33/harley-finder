@@ -38,7 +38,7 @@ async function create(req, res) {
             name,
             description,
             motorcycles,
-            public,
+            public: isPublic,
             createdBy
         })
         res.status(201).json(wishlist)
@@ -57,7 +57,7 @@ async function update(req, res) {
                 name,
                 description,
                 motorcycles,
-                public,
+                public: isPublic,
                 createdBy
             },
             { new: true }
