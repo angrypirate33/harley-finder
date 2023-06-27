@@ -8,6 +8,7 @@ import IndexPage from '../IndexPage/IndexPage'
 import WishlistPage from '../WishlistPage/WishlistPage'
 import AboutPage from '../AboutPage/AboutPage'
 import MotorcycleSearchPage from '../MotorcycleSearchPage/MotorcycleSearchPage'
+import MotorcycleDetailPage from '../MotorcycleDetailPage/MotorcycleDetailPage'
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
             <Route path='/search' element={<MotorcycleSearchPage />} />
             <Route path='/wishlist' element={<WishlistPage />} />
             <Route path='/about' element={<AboutPage />} />
+            <Route path='/motorcycles/:id' element={<MotorcycleDetailPage />} />
           </Routes>
         </>
         : 
