@@ -5,7 +5,8 @@ const BASE_URL = '/api/wishlists'
 export async function getAllWishlists() {
     try {
       const response = await sendRequest(BASE_URL)
-      const wishlists = response.data
+      const wishlists = response
+      console.log('wishlists in getAll: ', wishlists)
       return wishlists
     } catch (error) {
       console.log(error)
