@@ -28,13 +28,7 @@ export async function getWishlistById(id) {
 
 export async function createWishlist(wishlistData) {
     try {
-        const response = await sendRequest(BASE_URL, {
-            method: 'POST',
-            body: JSON.stringify(wishlistData),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+        const response = await sendRequest(BASE_URL, 'POST', wishlistData)
         return response
     } catch(error) {
         console.log(error)

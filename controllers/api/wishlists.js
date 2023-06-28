@@ -33,7 +33,7 @@ async function getOne(req, res) {
 
 async function create(req, res) {
     try {
-        const { name, description, motorcycles, public, createdBy } = req.body
+        const { name, description, motorcycles, public: isPublic, createdBy } = req.body
         const wishlist = await Wishlist.create({
             name,
             description,
@@ -50,7 +50,7 @@ async function create(req, res) {
 
 async function update(req, res) {
     try {
-        const { name, description, motorcycles, public, createdBy } = req.body
+        const { name, description, motorcycles, public: isPublic, createdBy } = req.body
         const wishlist = await Wishlist.findByIdAndUpdate(
             req.params.id,
             {

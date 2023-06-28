@@ -26,7 +26,10 @@ export default function WishlistPage() {
     <div>
       <h1>WishlistPage</h1>
       {wishlists.length === 0 ? (
-        <p>No wishlists yet</p>
+        <div>
+          <h3>No wishlists yet</h3>
+          <h5>Create your first wishlist using the form below:</h5>
+        </div>
       ) : (
         <div className="wishlist-list">
           {wishlists.map((wishlist) => (
