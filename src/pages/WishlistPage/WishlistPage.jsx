@@ -8,13 +8,14 @@ import './WishlistPage.css'
 
 export default function WishlistPage() {
   const [wishlists, setWishlists] = useState([])
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const loadWishlists = async () => {
       try {
         const response = await wishlistsAPI.getAllWishlists()
-        console.log('API Response:', response.data)
-        setWishlists(response.data)
+        console.log('API Response:', response)
+        setWishlists(response)
       } catch(error) {
         console.log(error)
       }

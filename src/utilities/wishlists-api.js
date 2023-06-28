@@ -5,11 +5,8 @@ const BASE_URL = '/api/wishlists'
 export async function getAllWishlists() {
     try {
       const response = await sendRequest(BASE_URL)
-      if (response.status === 200) {
-        return response.data
-      } else {
-        throw new Error('Failed to fetch wishlists')
-      }
+      const wishlists = response.data
+      return wishlists
     } catch (error) {
       console.log(error)
       throw new Error('Failed to fetch wishlists')
