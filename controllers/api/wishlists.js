@@ -33,14 +33,19 @@ async function getOne(req, res) {
 
 async function create(req, res) {
     try {
-        const { name, description, motorcycles, public: isPublic, createdBy } = req.body
+        const { name, description, motorcycles, public: isPublic } = req.body
+        const createdBy = req.user.name
+        const userId = req.user._id
+
         const wishlist = await Wishlist.create({
             name,
             description,
             motorcycles,
             public: isPublic,
+            user: userId,
             createdBy
         })
+
         res.status(201).json(wishlist)
     } catch(error) {
         console.log(error)
