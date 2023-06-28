@@ -34,7 +34,7 @@ export default function WishlistPage() {
       ) : (
         <div className="wishlist-list">
           {wishlists.map((wishlist) => (
-            <WishlistCard key={wishlist._id} wishlist={wishlist} />
+            <li key={wishlist._id}>{wishlist.name}</li>
           ))}
         </div>
       )}
