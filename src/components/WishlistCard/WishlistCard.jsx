@@ -30,7 +30,7 @@ export default function WishlistCard({ wishlist, onEdit }) {
         const newValue = type === 'checkbox' ? checked : value
         setUpdatedData((prevData) => ({
             ...prevData,
-            [name]: value
+            [name]: newValue
         }))
     }
 
@@ -50,7 +50,7 @@ export default function WishlistCard({ wishlist, onEdit }) {
                     <form onSubmit={handleSave}>
                         <div className="input-field">
                             <input id={`name-${_id}`} type="text" name="name" value={updatedData.name} onChange={handleChange} />
-                            <label htmlFor={`name-${_id}`}>Name</label>
+                            <label htmlFor={`name-${_id}`} className='active'>Name</label>
                         </div>
                         <div className="input-field">
                             <textarea
@@ -60,10 +60,10 @@ export default function WishlistCard({ wishlist, onEdit }) {
                                 value={updatedData.description}
                                 onChange={handleChange}
                             ></textarea>
-                            <label htmlFor={`description-${_id}`}>Description</label>
+                            <label htmlFor={`description-${_id}`} className='active'>Description</label>
                         </div>
                         <div className="input-field">
-                            <label>
+                            <label className='active'>
                                 <input
                                 id={`public-${_id}`}
                                 type="checkbox"
