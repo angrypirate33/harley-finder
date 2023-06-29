@@ -13,6 +13,10 @@ export default function WishlistCard({ wishlist }) {
                 <p>Motorcycles: {motorcycles.join(', ')}</p>
                 <p>Public: {isPublic ? 'Yes' : 'No'}</p>
                 <p>Created By: {createdBy}</p>
+                <div className='card-action'>
+                    <button className='btn black waves-effect waves-light' >Edit</button>
+                    <button className='btn black waves-effect waves-light' >Delete</button>
+                </div>
             </div>
         </div>
     )
