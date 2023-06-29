@@ -83,7 +83,7 @@ async function deleteWishlist(req, res) {
         if (!wishlist) {
             return res.status(404).json({ error: 'Wishlist not found' })
         }
-        res.sendStatus(204)
+        res.json({ success: true })
     } catch(error) {
         console.log(error)
         res.status(500).json({ error: 'Server Error' })

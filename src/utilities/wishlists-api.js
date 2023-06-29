@@ -35,13 +35,8 @@ export async function createWishlist(wishlistData) {
 
 export async function updateWishlist(id, wishlistData) {
     try {
-        return sendRequest(`${BASE_URL}/${id}`, {
-            method: 'PUT',
-            body: JSON.stringify(wishlistData),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+        const response = await sendRequest(`${BASE_URL}/${id}`, 'PUT', wishlistData)
+        return response
     } catch(error) {
         console.log(error)
         throw new Error('Failed to update wishlist')
@@ -50,9 +45,7 @@ export async function updateWishlist(id, wishlistData) {
 
 export async function  deleteWishlist(id) {
     try {
-        const response = sendRequest(`${BASE_URL}/${id}`, {
-            method: 'DELETE'
-        })
+        const response = await sendRequest(`${BASE_URL}/${id}`, 'DELETE')
         return response
     } catch(error) {
         console.log(error)
