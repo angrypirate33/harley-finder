@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import * as wishlistsAPI from '../../utilities/wishlists-api'
+import WishlistCard from '../../components/WishlistCard/WishlistCard'
 import './WishlistDetailPage.css'
 
 export default function WishlistDetailPage() {
@@ -42,8 +43,7 @@ export default function WishlistDetailPage() {
     return (
         <div>
             <h2>WishlistDetailPage</h2>
-            <h3>{wishlist.name}</h3>
-            <p>{wishlist.description}</p>
+            <WishlistCard wishlist={wishlist} />
         </div>
     )
 }
