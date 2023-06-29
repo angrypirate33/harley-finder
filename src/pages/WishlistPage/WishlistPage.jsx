@@ -47,7 +47,7 @@ export default function WishlistPage({ user }) {
               {wishlists.map((wishlist) => (
                 <li key={wishlist._id} className="collection-item orange">
                   <Link className='black-text' to={`/wishlists/${wishlist._id}`}>
-                    {wishlist.name}
+                    {wishlist.name} - {wishlist.description}
                   </Link>
                 </li>
               ))}
