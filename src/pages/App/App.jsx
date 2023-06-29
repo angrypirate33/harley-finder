@@ -9,6 +9,7 @@ import WishlistPage from '../WishlistPage/WishlistPage'
 import AboutPage from '../AboutPage/AboutPage'
 import MotorcycleSearchPage from '../MotorcycleSearchPage/MotorcycleSearchPage'
 import MotorcycleDetailPage from '../MotorcycleDetailPage/MotorcycleDetailPage'
+import WishlistDetailPage from '../WishlistDetailPage/WishlistDetailPage'
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
             <Route path='/' element={<IndexPage />} />
             <Route path='/search' element={<MotorcycleSearchPage />} />
             <Route path='/wishlists' element={<WishlistPage />} />
+            <Route path='/wishlists/:id' element={<WishlistDetailPage />} />
             <Route path='/about' element={<AboutPage />} />
             <Route path='/motorcycles/:id' element={<MotorcycleDetailPage />} />
           </Routes>

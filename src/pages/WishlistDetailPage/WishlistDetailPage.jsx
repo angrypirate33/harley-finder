@@ -1,8 +1,49 @@
-
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import * as wishlistsAPI from '../../utilities/wishlists-api'
 import './WishlistDetailPage.css'
 
 export default function WishlistDetailPage() {
+
+    const [wishlist, setWishlist] = useState(null)
+    const [error, setError] = useState(null)
+    const { id } = useParams()
+
+    useEffect(() => {
+        const loadWishlist = async () => {
+            try {
+                const response = await wishlistsAPI.getWishlistById(id)
+                setWishlist(response)
+            } catch (error) {
+                console.log(error)
+                setError('Failed to fetch wishlist')
+            }
+        }
+
+        loadWishlist()
+    }, [id])
+
+    if (error) {
+        reutrn (
+            <div>
+                Error: {error}
+            </div>
+        )
+    }
+
+    if (!wishlist) {
+        return (
+            <div>
+                Loading wishlist...
+            </div>
+        )
+    }
+
     return (
-        <h2>WishlistDetailPage</h2>
+        <div>
+            <h2>WishlistDetailPage</h2>
+            <h3>{wishlist.name}</h3>
+            <p>{wishlist.description}</p>
+        </div>
     )
 }
