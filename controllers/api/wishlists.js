@@ -62,7 +62,7 @@ async function update(req, res) {
                 name,
                 description,
                 motorcycles,
-                public: isPublic,
+                public: Boolean(isPublic),
                 createdBy
             },
             { new: true }
