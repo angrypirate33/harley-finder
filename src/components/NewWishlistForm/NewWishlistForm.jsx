@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import * as wishlistsAPI from '../../utilities/wishlists-api'
 import './NewWishlistForm.css'
 
-export default function NewWishlistForm() {
+export default function NewWishlistForm({ onWishlistCreated }) {
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
 
@@ -17,7 +17,10 @@ export default function NewWishlistForm() {
         }
 
         try {
-            const response = await wishlistsAPI.createWishlist(wishlistData)
+            await wishlistsAPI.createWishlist(wishlistData)
+            onWishlistCreated()
+            setName('')
+            setDescription('')
         } catch(error) {
             console.log('Failed to create wishlist:', error.message)
         }

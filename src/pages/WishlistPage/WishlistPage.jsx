@@ -5,23 +5,31 @@ import * as wishlistsAPI from '../../utilities/wishlists-api'
 import './WishlistPage.css'
 
 
-
 export default function WishlistPage() {
   const [wishlists, setWishlists] = useState([])
   const [error, setError] = useState(null)
+  const [wishlistCreated, setWishlistCreated] = useState(false)
 
   useEffect(() => {
     const loadWishlists = async () => {
       try {
         const response = await wishlistsAPI.getAllWishlists()
-        console.log('API Response:', response)
         setWishlists(response)
       } catch(error) {
         console.log(error)
       }
     }
     loadWishlists()
-  }, [])
+    setWishlistCreated(false)
+  }, [wishlistCreated])
+
+  const handleWishlistCreated = async () => {
+    try {
+      setWishlistCreated(true)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div>
@@ -38,7 +46,7 @@ export default function WishlistPage() {
           ))}
         </div>
       )}
-      <NewWishlistForm />
+      <NewWishlistForm onWishlistCreated={handleWishlistCreated} />
     </div>
   )
 }

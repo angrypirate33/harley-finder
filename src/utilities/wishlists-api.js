@@ -6,7 +6,6 @@ export async function getAllWishlists() {
     try {
       const response = await sendRequest(BASE_URL)
       const wishlists = response
-      console.log('wishlists in getAll: ', wishlists)
       return wishlists
     } catch (error) {
       console.log(error)
