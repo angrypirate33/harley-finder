@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import WishlistCard from '../../components/WishlistCard/WishlistCard'
 import NewWishlistForm from '../../components/NewWishlistForm/NewWishlistForm'
 import * as wishlistsAPI from '../../utilities/wishlists-api'
 import './WishlistPage.css'
 
 
-export default function WishlistPage() {
+export default function WishlistPage({ user }) {
   const [wishlists, setWishlists] = useState([])
   const [error, setError] = useState(null)
   const [wishlistCreated, setWishlistCreated] = useState(false)
@@ -34,7 +33,6 @@ export default function WishlistPage() {
 
   return (
     <div>
-      <h1>WishlistPage</h1>
       {wishlists.length === 0 ? (
         <div>
           <h3>No wishlists yet</h3>
@@ -42,11 +40,16 @@ export default function WishlistPage() {
         </div>
       ) : (
         <div className="wishlist-list">
-          {wishlists.map((wishlist) => (
-            <Link key={wishlist._id} to={`/wishlists/${wishlist._id}`} >
-              <li>{wishlist.name}</li>
-            </Link>
-          ))}
+          <ul className="collection with-header">
+            <li className='collection-header orange'>
+              <h4 className='black-text'>{user.name}'s Wishlists</h4>
+            </li>
+              {wishlists.map((wishlist) => (
+                <li key={wishlist._id} className="collection-item orange">
+                  <Link className='black-text' to={`/wishlists/${wishlist._id}`}>{wishlist.name}</Link>
+                </li>
+              ))}
+          </ul>
         </div>
       )}
       <NewWishlistForm onWishlistCreated={handleWishlistCreated} />

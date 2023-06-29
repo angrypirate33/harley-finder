@@ -23,7 +23,7 @@ export default function App() {
           <Routes>
             <Route path='/' element={<IndexPage />} />
             <Route path='/search' element={<MotorcycleSearchPage />} />
-            <Route path='/wishlists' element={<WishlistPage />} />
+            <Route path='/wishlists' element={<WishlistPage user={user} />} />
             <Route path='/wishlists/:id' element={<WishlistDetailPage />} />
             <Route path='/about' element={<AboutPage />} />
             <Route path='/motorcycles/:id' element={<MotorcycleDetailPage />} />
