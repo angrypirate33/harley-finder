@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import WishlistCard from '../../components/WishlistCard/WishlistCard'
 import NewWishlistForm from '../../components/NewWishlistForm/NewWishlistForm'
 import * as wishlistsAPI from '../../utilities/wishlists-api'
@@ -42,7 +43,9 @@ export default function WishlistPage() {
       ) : (
         <div className="wishlist-list">
           {wishlists.map((wishlist) => (
-            <li key={wishlist._id}>{wishlist.name}</li>
+            <Link key={wishlist._id} to={`/wishlist/${wishlist._id}`} >
+              <li>{wishlist.name}</li>
+            </Link>
           ))}
         </div>
       )}
