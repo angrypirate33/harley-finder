@@ -10,7 +10,7 @@ module.exports = {
 
 async function getAll(req, res) {
     try {
-        const wishlists = await Wishlist.find()
+        const wishlists = await Wishlist.find({ user: req.user._id })
         res.json(wishlists)
     } catch(error) {
         console.log(error)

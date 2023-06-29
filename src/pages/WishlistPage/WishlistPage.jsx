@@ -42,12 +42,12 @@ export default function WishlistPage({ user }) {
         <div className="wishlist-list">
           <ul className="collection with-header">
             <li className='collection-header orange'>
-              <h4 className='black-text'>{user.name}'s Wishlists</h4>
+              <h4 className='black-text'>{user.name}'s Motorcycle Wishlists</h4>
             </li>
               {wishlists.map((wishlist) => (
                 <li key={wishlist._id} className="collection-item orange">
                   <Link className='black-text' to={`/wishlists/${wishlist._id}`}>
-                    {wishlist.name} - {wishlist.description}
+                    <span id='wishlistName'>{wishlist.name}</span> - {wishlist.description}
                   </Link>
                 </li>
               ))}
