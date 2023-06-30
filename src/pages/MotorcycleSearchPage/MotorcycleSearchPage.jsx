@@ -96,21 +96,24 @@ export default function MotorcycleSearchPage() {
     return (
         <div>
             <h2>MotorcycleSearchPage</h2>
-            <div className="row">
-                <div className="col s12">
-                    <label htmlFor="year-range-slider">Select Year Range:</label>
-                    <RangeSlider
-                        min={1941}
-                        max={2022}
-                        step={1}
-                        value={yearRange}
-                        onChange={handleYearRangeChange}
-                    />
-                    <span id='minYear'>{yearRange.min}</span>
-                    &nbsp;-&nbsp;
-                    <span id='maxYear'>{yearRange.max}</span>
+                <div id='search-criteria'>
+                    <h5>Search Criteria</h5>
+                    <div className="row">
+                        <div className="col s12">
+                            <label htmlFor="year-range-slider" id='slider-label'>Select Year Range:</label>
+                            <RangeSlider
+                                min={1941}
+                                max={2022}
+                                step={1}
+                                value={yearRange}
+                                onChange={handleYearRangeChange}
+                            />
+                            <span id='minYear'>{yearRange.min}</span>
+                            &nbsp;-&nbsp;
+                            <span id='maxYear'>{yearRange.max}</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
                 <div className='row'>
                     {motorcycles.map(motorcycle => (
                         <div className='col s12 m6 l4' key={motorcycle._id}>
