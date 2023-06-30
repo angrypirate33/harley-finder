@@ -1,3 +1,20 @@
 #searchTitle {
     font-weight: bold;
 }
+
+.rail {
+    background: rgb(241, 157, 56);
+}
+
+.inner-rail {
+    background: rgb(241, 157, 56);
+    opacity: 0.5;
+}
+
+#minYear {
+
+}
+
+#maxYear {
+    
+}
