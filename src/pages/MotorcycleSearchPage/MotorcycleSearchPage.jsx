@@ -74,10 +74,25 @@ export default function MotorcycleSearchPage() {
 
     const [motorcycles, setMotorcycles] = useState([])
     const [yearRange, setYearRange] = useState({ min: 1941, max: 2022 })
+    const [models, setModels] = useState([])
 
     const handleYearRangeChange = (value) => {
         setYearRange(value)
     }
+
+    useEffect(() => {
+        const fetchModels = async () => {
+            try {
+                const response = await motorcyclesAPI.getUniqueModels()
+                setModels(response)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        fetchModels()
+        
+    }, [])
 
     useEffect(() => {
         const fetchMotorcycles = async () => {

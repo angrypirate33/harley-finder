@@ -2,7 +2,8 @@ const Motorcycle = require('../../models/motorcycle')
 
 module.exports = {
     index,
-    show
+    show,
+    getUniqueModels
 }
 
 async function index(req, res) {
@@ -24,6 +25,16 @@ async function show(req, res) {
         }
         res.json(motorcycle)
     } catch(error) {
+        console.log(error)
+        res.status(500).json({ error: 'Server Error' })
+    }
+}
+
+async function getUniqueModels(req, res) {
+    try {
+        const uniqueModels = await Motorcycle.distinct('model')
+        res.json(uniqueModels)
+    } catch (error) {
         console.log(error)
         res.status(500).json({ error: 'Server Error' })
     }

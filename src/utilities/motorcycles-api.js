@@ -21,3 +21,13 @@ export async function getMotorcycle(id) {
         throw new Error('Failed to fetch motorcycle')
     }
 }
+
+export async function getUniqueModels() {
+    try {
+        const response = await sendRequest(`${BASE_URL}/models`)
+        return response
+    } catch (error) {
+        console.log(error)
+        throw new Error('Failed to fetch unique models')
+    }
+}
