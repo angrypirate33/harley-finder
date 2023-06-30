@@ -1,4 +1,4 @@
-$thumb-size: 16px;
+$thumb-size: 18px;
 
 @mixin track-styles {
   appearance: none;
@@ -103,10 +103,6 @@ $thumb-size: 16px;
     margin-left: calc(#{$thumb-size} / -2);
     transform: translate3d(0, -50%, 0);
     z-index: 3;
-
-    &:active {
-      cursor: grabbing;
-    }
   }
 }
 
