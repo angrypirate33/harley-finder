@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import * as motorcyclesAPI from '../../utilities/motorcycles-api'
-import './MotorcycleSearchPage.css'
+import './MotorcycleSearchPage.scss'
 
 
 const RangeSlider = ({ min, max, value, step, onChange }) => {
@@ -37,6 +37,7 @@ const RangeSlider = ({ min, max, value, step, onChange }) => {
             <div className='input-wrapper'>
                 <input
                     className='input' 
+                    id='minYearSlider'
                     type='range'
                     value={minValue}
                     min={min}
@@ -46,6 +47,7 @@ const RangeSlider = ({ min, max, value, step, onChange }) => {
                 />
                 <input
                     className='input' 
+                    id='maxYearSlider'
                     type='range'
                     value={maxValue}
                     min={min}

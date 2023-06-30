@@ -1,0 +1,120 @@
+$thumb-size: 16px;
+
+@mixin track-styles {
+  appearance: none;
+  background: transparent;
+  border: transparent;
+}
+
+@mixin thumb-styles {
+  appearance: none;
+  pointer-events: all;
+  width: calc(#{$thumb-size} + 20px);
+  height: calc(#{$thumb-size} + 20px);;
+  border-radius: 0px;
+  border: 0 none;
+  cursor: grab;
+  opacity: 0;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: -2.5rem;
+  height: calc(#{$thumb-size} + 1.6rem);
+  
+  .input-wrapper {
+    width: calc(100% + #{$thumb-size});
+    margin: 0 calc(#{$thumb-size} / -2);
+    position: absolute;
+    height: $thumb-size;
+  }
+
+  .control-wrapper {
+    width: 100%;
+    position: absolute;
+    height: $thumb-size;
+  }
+
+  .input {
+    
+    width: 100%;
+    pointer-events: none;
+    appearance: none;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    padding: 0;
+
+    &::-ms-track {
+      @include track-styles;
+    }
+
+    &::-moz-range-track {
+      @include track-styles;
+    }
+
+    &:focus::-webkit-slider-runnable-track {
+      @include track-styles;
+    }
+
+    &::-ms-thumb {
+      @include thumb-styles;
+    }
+
+    &::-moz-range-thumb {
+      @include thumb-styles;
+    }
+
+    &::-webkit-slider-thumb {
+      @include thumb-styles;
+    }
+  }
+
+  .rail {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 6px;
+    border-radius: 3px;
+    background: rgb(241, 157, 56);
+  }
+
+  .inner-rail {
+    position: absolute;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+  }
+
+  .control {
+    width: $thumb-size;
+    height: $thumb-size;
+    border-radius: 50%;
+    position: absolute;
+    background: rgb(241, 157, 56);
+    top: 50%;
+    margin-left: calc(#{$thumb-size} / -2);
+    transform: translate3d(0, -50%, 0);
+    z-index: 3;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
+#minYearSlider {
+  margin-top: -2vmin;
+}
+
+#maxYearSlider {
+  margin-top: -15vmin;
+  top: -5vmin;
+}
