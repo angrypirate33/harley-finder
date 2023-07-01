@@ -150,6 +150,42 @@ export default function MotorcycleSearchPage() {
                                 loadOptions={loadModelOptions}
                                 onChange={setSelectedModels}
                                 value={selectedModels}
+                                styles={{
+                                    option: (provided, state) => ({
+                                        ...provided,
+                                        color: state.isFocused ? 'black' : 'white',
+                                        backgroundColor: state.isFocused ? 'orange' : 'black',
+                                    }),
+                                    multiValue: (styles) => {
+                                        return {
+                                            ...styles,
+                                            backgroundColor: 'orange',
+                                        };
+                                    },
+                                    multiValueLabel: (styles) => ({
+                                        ...styles,
+                                        color: 'black',
+                                    }),
+                                    multiValueRemove: (styles) => ({
+                                        ...styles,
+                                        color: 'white',
+                                        ':hover': {
+                                            backgroundColor: 'red',
+                                            color: 'white',
+                                        },
+                                    }),
+                                    control: (styles) => ({
+                                        ...styles,
+                                        backgroundColor: 'black',
+                                        color: 'white',
+                                    }),
+                                    singleValue: (provided, state) => {
+                                        const opacity = state.isDisabled ? 0.5 : 1;
+                                        const transition = 'opacity 300ms';
+                            
+                                        return { ...provided, opacity, transition, color: 'white' };
+                                    }
+                                }}
                             />
                         </div>
                     </div>
