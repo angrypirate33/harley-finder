@@ -2,6 +2,10 @@
     padding-left: 5vmin;
 }
 
+#userName {
+    font-weight: bold;
+}
+
 #logoutLink {
     padding-right: 5vmin;
 }
@@ -11,6 +15,3 @@
     padding-right: 5vmin;
 }
 
-#userName {
-    font-weight: bold;
-}
