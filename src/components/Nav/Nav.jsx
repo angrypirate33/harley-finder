@@ -13,6 +13,7 @@ export default function Nav({ user, setUser }) {
             <nav className='orange'>
                 <div className='nav-wrapper container'>
                     <span className='black-text left' id='welcomeMessage' >Welcome, <span id='userName'>{user.name}</span>!</span>
+                    <Link to='/' className='black-text waves-effect waves-light navLink'>Home</Link>
                     <Link to='/search' className='black-text waves-effect waves-light navLink'>Search Harleys</Link>
                     <Link to='/wishlists' className='black-text waves-effect waves-light navLink'>Your Wishlists</Link>
                     <Link to='/about' className='black-text waves-effect waves-light navLink'>About</Link>
