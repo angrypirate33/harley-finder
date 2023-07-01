@@ -85,8 +85,8 @@ export default function MotorcycleSearchPage() {
     const loadModelOptions = (inputValue, callback) => {
         motorcyclesAPI.getModelsBySearch(inputValue)
             .then(models => {
-                models.sort()
-                const options = models.map(model => ({ value: model, label: model }))
+                const uniqueModels = Array.from(new Set(models)).sort()
+                const options = uniqueModels.map(model => ({ value: model, label: model }))
                 callback(options)
             })
             .catch(err => console.log(err))
