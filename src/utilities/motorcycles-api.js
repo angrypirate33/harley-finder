@@ -31,3 +31,13 @@ export async function getUniqueModels() {
         throw new Error('Failed to fetch unique models')
     }
 }
+
+export async function getModelsBySearch(searchTerm = '') {
+    try {
+        const response = await sendRequest(`${BASE_URL}/searchmodels?search=${searchTerm}`)
+        return response
+    } catch (error) {
+        console.log(error)
+        throw new Error('Failed to fetch models by search term')
+    }
+}

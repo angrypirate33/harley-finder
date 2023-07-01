@@ -3,6 +3,7 @@ const router = express.Router()
 const motorcyclesCtrl = require('../../controllers/api/motorcycles')
 
 router.get('/models', motorcyclesCtrl.getUniqueModels)
+router.get('/searchmodels', motorcyclesCtrl.searchModels)
 router.get('/', motorcyclesCtrl.index)
 router.get('/:id', motorcyclesCtrl.show)
 

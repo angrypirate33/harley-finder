@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import AsyncSelect from 'react-select/async'
 import * as motorcyclesAPI from '../../utilities/motorcycles-api'
 import './MotorcycleSearchPage.scss'
 
@@ -75,9 +76,19 @@ export default function MotorcycleSearchPage() {
     const [motorcycles, setMotorcycles] = useState([])
     const [yearRange, setYearRange] = useState({ min: 1941, max: 2022 })
     const [models, setModels] = useState([])
+    const [selectedModel, setSelectedModel] = useState(null)
 
     const handleYearRangeChange = (value) => {
         setYearRange(value)
+    }
+
+    const loadModelOptions = (inputValue, callback) => {
+        motorcyclesAPI.getModelsBySearch(inputValue)
+            .then(models => {
+                const options = models.map(model => ({ value: model, label: model }))
+                callback(options)
+            })
+            .catch(err => console.log(err))
     }
 
     useEffect(() => {
@@ -91,7 +102,7 @@ export default function MotorcycleSearchPage() {
         }
 
         fetchModels()
-        
+
     }, [])
 
     useEffect(() => {
@@ -126,6 +137,18 @@ export default function MotorcycleSearchPage() {
                             <span id='minYear'>{yearRange.min}</span>
                             &nbsp;-&nbsp;
                             <span id='maxYear'>{yearRange.max}</span>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col s12">
+                            <label htmlFor="model-select">Select Model:</label>
+                            <AsyncSelect
+                                cacheOptions
+                                defaultOptions
+                                loadOptions={loadModelOptions}
+                                onChange={setSelectedModel}
+                                value={selectedModel}
+                            />
                         </div>
                     </div>
                 </div>
