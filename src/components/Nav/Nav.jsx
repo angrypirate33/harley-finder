@@ -1,9 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import * as userService from '../../utilities/users-service'
 import './Nav.css'
 
 export default function Nav({ user, setUser }) {
+    const [sidenavInstance, setSidenavInstance] = useState(null)
+    
     function handleLogOut() {
         userService.logOut()
         setUser(null)
@@ -12,7 +14,14 @@ export default function Nav({ user, setUser }) {
     useEffect(() => {
         let elems = document.querySelectorAll('.sidenav')
         let instances = window.M.Sidenav.init(elems, {})
+        setSidenavInstance(instances[0])
     }, [])
+
+    const closeSidenav = () => {
+        if (sidenavInstance) {
+            sidenavInstance.close()
+        }
+    }
 
     return (
         <header>
@@ -32,11 +41,11 @@ export default function Nav({ user, setUser }) {
                 </nav>
             </div>
                 <ul className="sidenav" id="mobile-links">
-                    <li><Link to='/' className='black-text waves-effect waves-light'>Home</Link></li>
-                    <li><Link to='/search' className='black-text waves-effect waves-light'>Search Harleys</Link></li>
-                    <li><Link to='/wishlists' className='black-text waves-effect waves-light'>Your Wishlists</Link></li>
-                    <li><Link to='/about' className='black-text waves-effect waves-light'>About</Link></li>
-                    <li><Link to="" onClick={handleLogOut} className='black-text waves-effect waves-light'>Log Out</Link></li>
+                    <li><Link onClick={closeSidenav} to='/' className='black-text waves-effect waves-light'>Home</Link></li>
+                    <li><Link onClick={closeSidenav} to='/search' className='black-text waves-effect waves-light'>Search Harleys</Link></li>
+                    <li><Link onClick={closeSidenav} to='/wishlists' className='black-text waves-effect waves-light'>Your Wishlists</Link></li>
+                    <li><Link onClick={closeSidenav} to='/about' className='black-text waves-effect waves-light'>About</Link></li>
+                    <li><Link onClick={closeSidenav} to="" onClick={handleLogOut} className='black-text waves-effect waves-light'>Log Out</Link></li>
                 </ul>
         </header>
     )
