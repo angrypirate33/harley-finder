@@ -142,8 +142,9 @@ export default function MotorcycleSearchPage() {
                     </div>
                     <div className="row">
                         <div className="col s12">
-                            <label htmlFor="model-select">Select Model:</label>
+                            <label htmlFor="model-select" id='dropdown-label'>Select Model:</label>
                             <AsyncSelect
+                                id='dropdown-menu'
                                 isMulti
                                 cacheOptions
                                 defaultOptions
@@ -174,16 +175,33 @@ export default function MotorcycleSearchPage() {
                                             color: 'white',
                                         },
                                     }),
-                                    control: (styles) => ({
-                                        ...styles,
+                                    control: (base, state) => ({
+                                        ...base,
                                         backgroundColor: 'black',
                                         color: 'white',
+                                        borderColor: state.isFocused ? 'orange' : 'white',
+                                        boxShadow: state.isFocused ? '0 0 0 3px rgba(255, 165, 0, 0.5)' : null, // Orange shadow
+                                        ":hover": {
+                                            borderColor: 'white'
+                                        }
                                     }),
                                     singleValue: (provided, state) => {
                                         const opacity = state.isDisabled ? 0.5 : 1;
                                         const transition = 'opacity 300ms';
                             
                                         return { ...provided, opacity, transition, color: 'white' };
+                                    },
+                                    placeholder: (defaultStyles) => {
+                                        return {
+                                            ...defaultStyles,
+                                            color: 'white',
+                                        }
+                                    },
+                                    dropdownIndicator: (defaultStyles) => {
+                                        return {
+                                            ...defaultStyles,
+                                            color: 'white'
+                                        }
                                     }
                                 }}
                             />

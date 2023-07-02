@@ -115,10 +115,14 @@ $thumb-size: 18px;
   top: -5vmin;
 }
 
-#slider-label {
+#slider-label, #dropdown-label {
   color: white;
 }
 
 #search-criteria {
   border: 1px solid white
+}
+
+#dropdown-menu {
+  margin-top: 2vmin;
 }
