@@ -207,6 +207,16 @@ export default function MotorcycleSearchPage() {
                             />
                         </div>
                     </div>
+                    <div className='row'>
+                    <button
+                        className='btn orange waves-effect waves-light'
+                        id='search-button'
+                        type='submit'
+                        name='action'
+                    >
+                        Search
+                    </button>
+                    </div>
                 </div>
                 <div className='row'>
                     {motorcycles.map(motorcycle => (
