@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import comingSoon from '../../components/Images/image_coming_soon.png'
 import * as motorcyclesAPI from '../../utilities/motorcycles-api'
 import './MotorcycleDetailPage.css'
 
@@ -29,6 +30,9 @@ export default function MotorcycleDetailPage() {
     return (
         <div className="card orange" id='detailCard'>
             <div className="card-content black-text">
+                <div className='card-image waves-effect waves-block waves-light'>
+                    <img className='activator' src={comingSoon} alt='coming soon' />
+                </div>
                 <span className="card-title" id='detailsTitle'>{motorcycle.year} {motorcycle.model}</span>
                 <ul className='left-align'>
                     {motorcycle.type && <li><span className='detailHeader'>Type:</span> {motorcycle.type}</li>}
