@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import AsyncSelect from 'react-select/async'
 import * as motorcyclesAPI from '../../utilities/motorcycles-api'
+import comingSoon from '../../components/Images/image_coming_soon.png'
 import './MotorcycleSearchPage.scss'
 
 
@@ -238,20 +239,34 @@ export default function MotorcycleSearchPage() {
                 <div className='row'>
                     {motorcycles.map(motorcycle => (
                         <div className='col s12 m6 l4' key={motorcycle._id}>
-                            <Link to={`/motorcycles/${motorcycle._id}`}>
                                 <div className='card orange'>
+                                    <div className='card-image waves-effect waves-block waves-light'>
+                                        <img className='activator' src={comingSoon} alt='coming soon' />
+                                    </div>
                                     <div className='card-content'>
-                                        <span className='card-title black-text truncate' id='searchTitle'>{motorcycle.year} {motorcycle.model}</span>
+                                    <span className='card-title activator black-text text-darken-4'>{motorcycle.year} {motorcycle.model}<i className='material-icons right'>more_vert</i></span>
+                                    </div>
+                                    <div>
+
+                                    </div>
+                                    <div className='card-reveal orange'>
+                            
+                                    <span 
+                                        className='card-title black-text text-darken-4'>
+                                        <Link 
+                                            id='card-reveal-link'
+                                            to={`/motorcycles/${motorcycle._id}`}>{motorcycle.year} {motorcycle.model}
+                                        </Link>
+                                        <i className='material-icons right'>close</i></span>
                                         <ul>
-                                        <li className='black-text truncate'>Type: {motorcycle.type}</li>
-                                        <li className='black-text truncate'>Displacement: {motorcycle.displacement}</li>
-                                        <li className='black-text truncate'>Power: {motorcycle.power}</li>
-                                        <li className='black-text truncate'>Gearbox: {motorcycle.gearbox}</li>
-                                        <li className='black-text truncate'>Seat Height: {motorcycle.seat_height}</li>
+                                            <li className='black-text truncate'>Type: {motorcycle.type}</li>
+                                            <li className='black-text truncate'>Displacement: {motorcycle.displacement}</li>
+                                            <li className='black-text truncate'>Power: {motorcycle.power}</li>
+                                            <li className='black-text truncate'>Gearbox: {motorcycle.gearbox}</li>
+                                            <li className='black-text truncate'>Seat Height: {motorcycle.seat_height}</li>
                                         </ul>
                                     </div>
                                 </div>
-                            </Link>
                         </div>
                     ))}
                 </div>
