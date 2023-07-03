@@ -19,7 +19,7 @@ body {
 
     .heading {
         font-size: 2rem;
-        color: #333;
+        color: white;
     }
 
     .cta-button {
@@ -41,7 +41,7 @@ body {
     .wishlist-section {
         margin: 20px 0;
         padding: 20px;
-        background-color: #f8f8f8;
+        background-color: orange;
         border-radius: 4px;
 
         h2 {
@@ -50,12 +50,17 @@ body {
         }
 
         p {
-            color: #666;
+            color: #000;
         }
     }
 
     .landing-page-footer {
         margin-top: 20px;
+        margin-bottom: 20px;
         color: #999;
     }
+}
+
+.logo-container {
+    margin-top: 5vmin;
 }
