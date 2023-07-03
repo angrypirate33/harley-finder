@@ -175,6 +175,10 @@ export default function MotorcycleSearchPage() {
                                             color: 'white',
                                         },
                                     }),
+                                    input: (provided) => ({ 
+                                        ...provided, 
+                                        color: 'white' 
+                                    }),
                                     control: (base, state) => ({
                                         ...base,
                                         backgroundColor: 'black',
