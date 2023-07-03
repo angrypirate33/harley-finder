@@ -5,6 +5,7 @@ import reactLogo from '../../components/Images/react.svg'
 import './AboutPage.css'
 
 export default function AboutPage() {
+    
     return (
         <div className='container'>
             <div className='row'>
@@ -24,7 +25,7 @@ export default function AboutPage() {
                         <div className='card-content'>
                             <span className='card-title activator black-text text-darken-4'>Database<i className='material-icons right'>more_vert</i></span>
                         </div>
-                        <div className='card-reveal'>
+                        <div className='card-reveal orange'>
                             <span className='card-title black-text text-darken-4'>Database<i className='material-icons right'>close</i></span>
                             <p className='black-text'>MongoDB - NoSQL database<br/>Mongoose - Object Data Modeling (ODM) library</p>
                         </div>
@@ -39,7 +40,7 @@ export default function AboutPage() {
                         <div className='card-content'>
                             <span className='card-title activator grey-text text-darken-4'>Security<i className='material-icons right'>more_vert</i></span>
                         </div>
-                        <div className='card-reveal'>
+                        <div className='card-reveal orange'>
                             <span className='card-title grey-text text-darken-4'>Security<i className='material-icons right'>close</i></span>
                             <p className='black-text'>bcrypt - Password hashing middleware<br/>JWT - Method for securely transmitting information<br/>dotenv - Zero-dependency module</p>
                         </div>
@@ -56,7 +57,7 @@ export default function AboutPage() {
                         <div className='card-content'>
                             <span className='card-title activator grey-text text-darken-4'>Backend<i className='material-icons right'>more_vert</i></span>
                         </div>
-                        <div className='card-reveal'>
+                        <div className='card-reveal orange'>
                             <span className='card-title grey-text text-darken-4'>Backend<i className='material-icons right'>close</i></span>
                             <p className='black-text'>Node.js - Open-source, cross-platform, back-end JavaScript runtime environment<br/>Express - Web application framework for Node.js</p>
                         </div>
@@ -71,7 +72,7 @@ export default function AboutPage() {
                         <div className='card-content'>
                             <span className='card-title activator grey-text text-darken-4'>Frontend<i className='material-icons right'>more_vert</i></span>
                         </div>
-                        <div className='card-reveal'>
+                        <div className='card-reveal orange'>
                             <span className='card-title grey-text text-darken-4'>Frontend<i className='material-icons right'>close</i></span>
                             <p className='black-text'>React - JavaScript library for building user interfaces<br/>Materialize - Modern responsive front-end framework<br/>SASS - Preprocessor scripting language that is interpreted into CSS</p>
                         </div>
