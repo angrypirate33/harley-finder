@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import harleyLogo from '../../components/harley.svg'
+import harleyLogo from '../../components/Images/harley.svg'
 import './IndexPage.scss'
 
 export default function IndexPage() {
