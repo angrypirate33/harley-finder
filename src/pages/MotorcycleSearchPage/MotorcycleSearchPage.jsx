@@ -250,7 +250,6 @@ export default function MotorcycleSearchPage() {
 
                                     </div>
                                     <div className='card-reveal orange'>
-                            
                                     <span 
                                         className='card-title black-text text-darken-4'>
                                         <Link 
@@ -265,6 +264,13 @@ export default function MotorcycleSearchPage() {
                                             <li className='black-text truncate'>Gearbox: {motorcycle.gearbox}</li>
                                             <li className='black-text truncate'>Seat Height: {motorcycle.seat_height}</li>
                                         </ul>
+                                        <button
+                                            className='btn black waves-effect waves-light'
+                                            type='submit'
+                                            name='action'
+                                        >
+                                            Add to Wishlist
+                                        </button>
                                     </div>
                                 </div>
                         </div>
