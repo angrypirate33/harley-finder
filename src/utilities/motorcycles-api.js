@@ -41,3 +41,13 @@ export async function getModelsBySearch(searchTerm = '') {
         throw new Error('Failed to fetch models by search term')
     }
 }
+
+export async function searchMotorcycles(criteria) {
+    try {
+        const response = await sendRequest(`${BASE_URL}/search`, 'POST', criteria)
+        return response
+    } catch (error) {
+        console.log(error)
+        throw new Error('Failed to fetch motorcycles')
+    }
+}

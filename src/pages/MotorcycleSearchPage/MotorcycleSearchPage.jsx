@@ -92,6 +92,18 @@ export default function MotorcycleSearchPage() {
             .catch(err => console.log(err))
     }
 
+    const handleSearch = async () => {
+        try {
+            const response = await motorcyclesAPI.searchMotorcycles({
+                yearRange: yearRange,
+                models: selectedModels.map(model => model.value)
+            })
+            setMotorcycles(response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         const fetchModels = async () => {
             try {
@@ -217,6 +229,7 @@ export default function MotorcycleSearchPage() {
                         id='search-button'
                         type='submit'
                         name='action'
+                        onClick={handleSearch}
                     >
                         Search
                     </button>

@@ -4,7 +4,8 @@ module.exports = {
     index,
     show,
     getUniqueModels,
-    searchModels
+    searchModels,
+    search
 }
 
 async function index(req, res) {
@@ -49,6 +50,23 @@ async function searchModels(req, res) {
         ).limit(50)
         const models = matchingModels.map(motorcycle => motorcycle.model)
         res.json(models)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: 'Server Error' })
+    }
+}
+
+async function search(req, res) {
+    const { yearRange, models } = req.body
+    let query = { year: { $gte: yearRange.min, $lte: yearRange.max } }
+
+    if (models.length > 0) {
+        query.model = { $in: models }
+    }
+
+    try {
+        const matchingMotorcycles = await Motorcycle.find(query)
+        res.json(matchingMotorcycles)
     } catch (error) {
         console.log(error)
         res.status(500).json({ error: 'Server Error' })
