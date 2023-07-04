@@ -279,7 +279,18 @@ export default function MotorcycleSearchPage() {
                                         <img className='activator' src={comingSoon} alt='coming soon' />
                                     </div>
                                     <div className='card-content'>
-                                    <span className='card-title activator black-text text-darken-4'>{motorcycle.year} {motorcycle.model}<i className='material-icons right'>more_vert</i></span>
+                                    <div id='card-title-wrapper'>
+                                        <div className='text-wrapper'>
+                                            <span className='card-title activator black-text text-darken-4'>
+                                                {motorcycle.year} 
+                                                <br />
+                                                {motorcycle.model}
+                                            </span>
+                                        </div>
+                                        <div className='icon-wrapper activator black-text text-darken-4'>
+                                            <i className='material-icons right'>more_vert</i>
+                                        </div>
+                                    </div>
                                     </div>
                                     <div>
 
