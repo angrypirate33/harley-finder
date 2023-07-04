@@ -127,6 +127,7 @@ $thumb-size: 18px;
 
 #dropdown-menu {
   margin-top: 2vmin;
+  z-index: 9;
 }
 
 #search-button {
@@ -143,6 +144,3 @@ $thumb-size: 18px;
   color: black;
 }
 
-#wishlist-select {
-  margin-top: -7.5vmin;
-}

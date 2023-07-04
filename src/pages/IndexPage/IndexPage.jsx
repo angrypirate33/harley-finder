@@ -9,7 +9,7 @@ export default function IndexPage() {
               <div className='logo-container'>
                   <img src={harleyLogo} alt='Harley Logo' id='harley-logo' />
               </div>
-              <h1 className='heading'>Welcome to Harley Davidson Tracker</h1>
+              <h1 className='heading' id='welcome'>Welcome to Harley-Finder</h1>
           </header>
 
           <main className='landing-page-main'>
