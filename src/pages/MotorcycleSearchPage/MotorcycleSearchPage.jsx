@@ -112,8 +112,10 @@ export default function MotorcycleSearchPage() {
 
     const handleAddToWishlist = async (motorcycle) => {
         try {
-            await wishlistsAPI.addMotorcycle(motorcycle._id, selectedWishlist)
-            setSelectedWishlist(null)
+            const updatedWishlist = await wishlistsAPI.addMotorcycle(motorcycle._id, selectedWishlist)
+            setUserWishlists(userWishlists.map(wishlist => 
+                wishlist._id === updatedWishlist._id ? updatedWishlist : wishlist
+            ))
             document.querySelector(`#motorcycle-${motorcycle._id} .card-reveal .card-title i`).click()
         } catch (error) {
             console.log(error)
