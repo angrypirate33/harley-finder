@@ -170,7 +170,7 @@ export default function MotorcycleSearchPage() {
 
     return (
         <div>
-            <h2>MotorcycleSearchPage</h2>
+            <h2>Motorcycle Search</h2>
                 <div id='search-criteria'>
                     <h5>Search Criteria</h5>
                     <div className="row">
