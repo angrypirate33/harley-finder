@@ -18,9 +18,9 @@ export default function AuthPage({ setUser }) {
     return (
       <div className='container'>
         <div className='row'>
-            <div className='col s12 m6 offset-m3'>
+            <div className='col s12 m8 offset-m2'>
                 <div className='card orange darken-1' id='login-card'>
-                    <div className='card-content white-text'>
+                    <div className='card-content black-text' id='login-signup-form'>
                         <span className='card-title center' id='welcome-message'>
                           Welcome to Harley-Finder
                         </span>
