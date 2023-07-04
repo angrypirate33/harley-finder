@@ -44,56 +44,56 @@ export default function WishlistCard({ wishlist, onEdit }) {
     }
 
     return (
-        <div className="card wishlist-card orange">
-            <div className="card-content">
+        <div className='card wishlist-card orange'>
+            <div className='card-content flow-text'>
                 {isEditing ? (
                     <form onSubmit={handleSave}>
-                        <div className="input-field">
-                            <input id={`name-${_id}`} type="text" name="name" value={updatedData.name} onChange={handleChange} />
+                        <div className='input-field'>
+                            <input id={`name-${_id}`} type='text' name='name' value={updatedData.name} onChange={handleChange} />
                             <label htmlFor={`name-${_id}`} className='active'>Name</label>
                         </div>
-                        <div className="input-field">
+                        <div className='input-field'>
                             <textarea
                                 id={`description-${_id}`}
-                                className="materialize-textarea"
-                                name="description"
+                                className='materialize-textarea'
+                                name='description'
                                 value={updatedData.description}
                                 onChange={handleChange}
                             ></textarea>
                             <label htmlFor={`description-${_id}`} className='active'>Description</label>
                         </div>
-                        <div className="input-field">
+                        <div className='input-field'>
                             <label className='active'>
                                 <input
                                 id={`public-${_id}`}
-                                type="checkbox"
-                                name="public"
+                                type='checkbox'
+                                name='public'
                                 checked={updatedData.public}
                                 onChange={handleChange}
                                 />
                                 <span>Public</span>
                             </label>
                         </div>
-                        <button className="btn black waves-effect waves-light" type="submit">
+                        <button className='btn black waves-effect waves-light' type='submit'>
                             Save
                         </button>
                     </form>
                 ) : (
                     <>
-                        <span className="card-title">{name}</span>
-                        <p>Description: {description}</p>
+                        <span className='card-title flow-text' id='wishlist-title'>{name}</span>
+                        <p id='wishlist-description'>{description}</p>
+                        <br />
                         <p>
-                            Motorcycles: 
-                            <ul>
+                            <ul id='wishlist-motorcycles'>
                                 {motorcycles.map(motorcycle => (
-                                    <li key={motorcycle._id}>
+                                    <li id='wishlist-motorcycle' key={motorcycle._id}>
                                         <Link to={`/motorcycles/${motorcycle._id}`}>{motorcycle.year} {motorcycle.model}</Link>
                                     </li>
                                 ))}
                             </ul>
                         </p>
                         <p>Public: {isPublic ? 'Yes' : 'No'}</p>
-                        <p>Created By: {createdBy}</p>
+                        <p id='created-by'>Created By: {createdBy}</p>
                         <div className='card-action'>
                             <button 
                                 className='btn black waves-effect waves-light'

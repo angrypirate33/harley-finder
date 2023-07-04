@@ -42,7 +42,7 @@ export default function WishlistDetailPage() {
 
     return (
         <div>
-            <h2>WishlistDetailPage</h2>
+            <h2>Wishlist Details</h2>
             <WishlistCard wishlist={wishlist} />
         </div>
     )
