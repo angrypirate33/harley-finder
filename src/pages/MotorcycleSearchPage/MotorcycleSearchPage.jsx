@@ -155,6 +155,7 @@ export default function MotorcycleSearchPage() {
             try {
                 const wishlists = await wishlistsAPI.getAllWishlists()
                 setUserWishlists(wishlists)
+                setSelectedWishlist(wishlists[0]._id)
             } catch (error) {
                 console.log(error)
             }
