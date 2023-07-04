@@ -120,7 +120,9 @@ $thumb-size: 18px;
 }
 
 #search-criteria {
-  border: 1px solid white
+  border: 1px solid white;
+  width: 99%;
+  margin-left: 1vmin;
 }
 
 #dropdown-menu {
@@ -134,4 +136,13 @@ $thumb-size: 18px;
 #card-reveal-link {
   color: black;
   text-decoration: underline;
+}
+
+#select-wishlist-card-title {
+  margin-top: 5vmin;
+  color: black;
+}
+
+#wishlist-select {
+  margin-top: -7.5vmin;
 }

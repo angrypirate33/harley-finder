@@ -1,3 +1,4 @@
+const wishlist = require('../../models/wishlist')
 const Wishlist = require('../../models/wishlist')
 
 module.exports = {
@@ -5,7 +6,8 @@ module.exports = {
     getOne,
     create,
     update,
-    delete: deleteWishlist
+    delete: deleteWishlist,
+    addMotorcycle
 }
 
 async function getAll(req, res) {
@@ -87,5 +89,19 @@ async function deleteWishlist(req, res) {
     } catch(error) {
         console.log(error)
         res.status(500).json({ error: 'Server Error' })
+    }
+}
+
+async function addMotorcycle(req, res) {
+    try {
+        const { motorcycleId, wishlistId } = req.body
+        const wishlist = await Wishlist.findById(wishlistId)
+        wishlist.motorcycles.push(motorcycleId)
+        await wishlist.save()
+
+        res.json(wishlist)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: 'Server Error'})
     }
 }

@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import ReactModal from 'react-modal'
 import AsyncSelect from 'react-select/async'
 import * as motorcyclesAPI from '../../utilities/motorcycles-api'
+import * as wishlistsAPI from '../../utilities/wishlists-api'
 import comingSoon from '../../components/Images/image_coming_soon.png'
 import './MotorcycleSearchPage.scss'
 
@@ -78,6 +80,9 @@ export default function MotorcycleSearchPage() {
     const [yearRange, setYearRange] = useState({ min: 1941, max: 2022 })
     const [models, setModels] = useState([])
     const [selectedModels, setSelectedModels] = useState([])
+    const [userWishlists, setUserWishlists] = useState([])
+    const [selectedWishlist, setSelectedWishlist] = useState(null)
+    const [selectedMotorcycle, setSelectedMotorcycle] = useState(null)
 
     const handleYearRangeChange = (value) => {
         setYearRange(value)
@@ -100,6 +105,15 @@ export default function MotorcycleSearchPage() {
                 models: selectedModels.map(model => model.value)
             })
             setMotorcycles(response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleAddToWishlist = async (motorcycle) => {
+        try {
+            await wishlistsAPI.addMotorcycle(motorcycle._id, selectedWishlist)
+            setSelectedWishlist(null)
         } catch (error) {
             console.log(error)
         }
@@ -132,6 +146,23 @@ export default function MotorcycleSearchPage() {
         fetchMotorcycles()
 
     }, [])
+
+    useEffect(() => {
+        const fetchWishlists = async () => {
+            try {
+                const wishlists = await wishlistsAPI.getAllWishlists()
+                setUserWishlists(wishlists)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchWishlists()
+    }, [])
+
+    useEffect(() => {
+        let elems = document.querySelectorAll('select');
+        let instances = window.M.FormSelect.init(elems, {});
+    }, [selectedMotorcycle])
 
     return (
         <div>
@@ -264,10 +295,25 @@ export default function MotorcycleSearchPage() {
                                             <li className='black-text truncate'>Gearbox: {motorcycle.gearbox}</li>
                                             <li className='black-text truncate'>Seat Height: {motorcycle.seat_height}</li>
                                         </ul>
+                                        <div className='row'>
+                                           <p id='select-wishlist-card-title'>Select Wishlist:</p> 
+                                        </div>
+                                        <div className='row'>
+                                            <select
+                                                id='wishlist-select'
+                                                value={selectedWishlist}
+                                                onChange={evt => setSelectedWishlist(evt.target.value)}
+                                            >
+                                                {userWishlists.map(wishlist => (
+                                                    <option value={wishlist._id} key={wishlist._id}>{wishlist.name}</option>
+                                                ))}
+                                            </select>
+                                        </div>
                                         <button
                                             className='btn black waves-effect waves-light'
                                             type='submit'
                                             name='action'
+                                            onClick={() => handleAddToWishlist(motorcycle)}
                                         >
                                             Add to Wishlist
                                         </button>

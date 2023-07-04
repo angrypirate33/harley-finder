@@ -52,3 +52,13 @@ export async function  deleteWishlist(id) {
         throw new Error('Failed to delete wishlist')
     }
 }
+
+export async function addMotorcycle(motorcycleId, wishlistId) {
+    try {
+        const response = await sendRequest(`${BASE_URL}/wishlist/motorcycles`, 'POST', { motorcycleId, wishlistId })
+        return response
+    } catch (error) {
+        console.log(error)
+        throw new Error('Failed to add motorcycle to wishlist')
+    }
+}
