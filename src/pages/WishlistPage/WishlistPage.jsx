@@ -40,7 +40,7 @@ export default function WishlistPage({ user }) {
         </div>
       ) : (
         <div className="wishlist-list">
-          <ul className="collection with-header">
+          <ul className="collection with-header" id='wishlist-collection'>
             <li className='collection-header orange'>
               <h4 className='black-text'>{user.name}'s Motorcycle Wishlists</h4>
             </li>

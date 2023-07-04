@@ -3,5 +3,11 @@
 }
 
 .wishlist-list {
+    display: flex;
+    justify-content: center;
     margin-top: 5vmin;
+}
+
+#wishlist-collection {
+    width: 75vw;
 }
