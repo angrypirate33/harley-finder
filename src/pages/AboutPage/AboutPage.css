@@ -1,3 +1,7 @@
 .expanded-reveal {
     background-color: transparent;
 }
+
+#database-image-container {
+    padding: 2vmin;
+}

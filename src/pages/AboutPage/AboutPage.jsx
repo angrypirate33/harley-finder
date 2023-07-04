@@ -1,4 +1,4 @@
-import databaseLogo from '../../components/Images/databse.svg'
+import databaseLogo from '../../components/Images/database.svg'
 import securityLogo from '../../components/Images/security.svg'
 import backendLogo from '../../components/Images/web-development.svg'
 import reactLogo from '../../components/Images/react.svg'
@@ -18,9 +18,11 @@ export default function AboutPage() {
 
             <div className='row'>
                 <div className='col s12 m4 offset-m2'>
-                    <div className='card'>
+                    <div className='card orange'>
                         <div className='card-image waves-effect waves-block waves-light'>
-                            <img className='activator' src={databaseLogo} alt='Database Logo'/>
+                            <div id='database-image-container'>
+                                <img className='activator' id='database-logo' src={databaseLogo} alt='Database Logo'/>
+                            </div>
                         </div>
                         <div className='card-content'>
                             <span className='card-title activator black-text text-darken-4'>Database<i className='material-icons right'>more_vert</i></span>
@@ -33,7 +35,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className='col s12 m4'>
-                    <div className='card'>
+                    <div className='card orange'>
                         <div className='card-image waves-effect waves-block waves-light'>
                             <img className='activator' src={securityLogo} alt='Security Logo'/>
                         </div>
@@ -50,7 +52,7 @@ export default function AboutPage() {
 
             <div className='row'>
                 <div className='col s12 m4 offset-m2'>
-                    <div className='card'>
+                    <div className='card orange'>
                         <div className='card-image waves-effect waves-block waves-light'>
                             <img className='activator' src={backendLogo} alt='Backend Logo'/>
                         </div>
@@ -65,7 +67,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className='col s12 m4'>
-                    <div className='card'>
+                    <div className='card orange'>
                         <div className='card-image waves-effect waves-block waves-light'>
                             <img className='activator' src={reactLogo} alt='React Logo'/>
                         </div>
