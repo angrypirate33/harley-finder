@@ -15,7 +15,7 @@ export default function IndexPage() {
           <main className='landing-page-main'>
               <section className='intro-section'>
                   <h2>Explore Over 1500 Harley Davidson Models</h2>
-                  <p>
+                  <p className='flow-text'>
                       Dive into the world of Harley Davidson. Search through an extensive database of over 1500 models. 
                       Find detailed specifications, compare models, and find the perfect ride for you.
                   </p>
@@ -24,7 +24,7 @@ export default function IndexPage() {
 
               <section className='wishlist-section'>
                   <h2>Create Your Wishlist</h2>
-                  <p>
+                  <p className='flow-text'>
                       Don't lose track of your favorite Harley Davidson motorcycles. Create your wishlist and keep an eye on 
                       the models you're interested in. Start building your dream garage today!
                   </p>
@@ -33,7 +33,7 @@ export default function IndexPage() {
           </main>
 
           <footer className='landing-page-footer'>
-              <p>&copy; {new Date().getFullYear()} Harley Davidson Tracker. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Harley-Finder. All rights reserved.</p>
           </footer>
       </div>
   );
