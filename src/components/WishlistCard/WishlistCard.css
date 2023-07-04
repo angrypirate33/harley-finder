@@ -10,6 +10,7 @@
     margin-top: 5vmin;
     padding-bottom: 2vmin;
     margin-bottom: 7.5vmin;
+    overflow: visible;
 }
 
 #wishlist-description {
