@@ -17,7 +17,8 @@ export default function WishlistCard({ wishlist, onEdit }) {
         setIsEditing(true)
     }
     
-    const handleSave = async () => {
+    const handleSave = async (evt) => {
+        evt.preventDefault()
         try {
             const updatedWishlist = { ...updatedData, public: updatedData.public }
             await updateWishlist(_id, updatedWishlist)
