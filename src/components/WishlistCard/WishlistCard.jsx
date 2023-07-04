@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { updateWishlist, deleteWishlist } from '../../utilities/wishlists-api'
+import { updateWishlist, deleteWishlist, removeMotorcycle } from '../../utilities/wishlists-api'
 import './WishlistCard.css'
 
 export default function WishlistCard({ wishlist, onEdit }) {
 
-    const { _id, name, description, motorcycles, public: isPublic, createdBy } = wishlist
+    const { _id, name, description, motorcycles: initialMotorcycles, public: isPublic, createdBy } = wishlist
+
+    const [motorcycles, setMotorcycles] = useState(initialMotorcycles)
     const [isEditing, setIsEditing] = useState(false)
     const [updatedData, setUpdatedData] = useState({ name, description, public: isPublic })
 
@@ -40,6 +42,17 @@ export default function WishlistCard({ wishlist, onEdit }) {
             navigate('/wishlists')
         } catch (error) {
             console.log('Error deleting wishlist: ', error)
+        }
+    }
+
+    const handleRemove = async (motorcycle) => {
+        try {
+            await removeMotorcycle(motorcycle._id, _id)
+            console.log('wishlist._id in handleRemove: ', wishlist._id)
+            const updatedMotorcycles = motorcycles.filter(m => m._id !== motorcycle._id)
+            setMotorcycles(updatedMotorcycles)
+        } catch (error) {
+            console.log(error)
         }
     }
 
@@ -88,6 +101,13 @@ export default function WishlistCard({ wishlist, onEdit }) {
                                 {motorcycles.map(motorcycle => (
                                     <li id='wishlist-motorcycle' key={motorcycle._id}>
                                         <Link to={`/motorcycles/${motorcycle._id}`}>{motorcycle.year} {motorcycle.model}</Link>
+                                        <i 
+                                            className="material-icons" 
+                                            id='trashcan'
+                                            onClick={() => handleRemove(motorcycle)}
+                                        >
+                                            delete
+                                        </i>
                                     </li>
                                 ))}
                             </ul>

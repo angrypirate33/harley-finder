@@ -7,6 +7,7 @@ router.get('/:id', wishlistsCtrl.getOne)
 router.post('/', wishlistsCtrl.create)
 router.put('/:id', wishlistsCtrl.update)
 router.post('/:id/motorcycles', wishlistsCtrl.addMotorcycle)
+router.delete('/:id/motorcycles', wishlistsCtrl.removeMotorcycle)
 router.delete('/:id', wishlistsCtrl.delete)
 
 module.exports = router

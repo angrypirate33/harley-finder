@@ -7,7 +7,8 @@ module.exports = {
     create,
     update,
     delete: deleteWishlist,
-    addMotorcycle
+    addMotorcycle,
+    removeMotorcycle
 }
 
 async function getAll(req, res) {
@@ -103,5 +104,20 @@ async function addMotorcycle(req, res) {
     } catch (error) {
         console.log(error)
         res.status(500).json({ error: 'Server Error'})
+    }
+}
+
+async function removeMotorcycle(req, res) {
+    try {
+        const wishlistId = req.params.id
+        const { motorcycleId } = req.body
+        const wishlist = await Wishlist.findById(wishlistId)
+        wishlist.motorcycles.pull(motorcycleId)
+        await wishlist.save()
+
+        res.json(wishlist)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: 'Server Error' })
     }
 }

@@ -25,7 +25,7 @@ export default function WishlistDetailPage() {
     }, [id])
 
     if (error) {
-        reutrn (
+        return (
             <div>
                 Error: {error}
             </div>

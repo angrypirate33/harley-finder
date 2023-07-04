@@ -20,9 +20,8 @@
     text-decoration: underline;
 }
 
-#wishlist-motorcycle {
-    color: white;
-
+#trashcan {
+    margin-left: 2vmin;
 }
 
 #created-by {
