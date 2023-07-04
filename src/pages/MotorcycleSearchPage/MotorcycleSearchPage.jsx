@@ -114,6 +114,7 @@ export default function MotorcycleSearchPage() {
         try {
             await wishlistsAPI.addMotorcycle(motorcycle._id, selectedWishlist)
             setSelectedWishlist(null)
+            document.querySelector(`#motorcycle-${motorcycle._id} .card-reveal .card-title i`).click()
         } catch (error) {
             console.log(error)
         }
@@ -162,7 +163,7 @@ export default function MotorcycleSearchPage() {
     useEffect(() => {
         let elems = document.querySelectorAll('select');
         let instances = window.M.FormSelect.init(elems, {});
-    }, [selectedMotorcycle])
+    }, [motorcycles])
 
     return (
         <div>
@@ -270,7 +271,7 @@ export default function MotorcycleSearchPage() {
                 <div className='row'>
                     {motorcycles.map(motorcycle => (
                         <div className='col s12 m6 l4' key={motorcycle._id}>
-                                <div className='card orange'>
+                                <div className='card orange' id={`motorcycle-${motorcycle._id}`}>
                                     <div className='card-image waves-effect waves-block waves-light'>
                                         <img className='activator' src={comingSoon} alt='coming soon' />
                                     </div>
