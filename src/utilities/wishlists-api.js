@@ -1,6 +1,7 @@
 import sendRequest from "./send-request";
 
-const BASE_URL = '/api/wishlists'
+// const BASE_URL = '/api/wishlists'
+const BASE_URL = 'https://harley-finder-api.onrender.com/api/wishlists'
 
 export async function getAllWishlists() {
     try {

@@ -1,6 +1,7 @@
 import sendRequest from "./send-request";
 
-const BASE_URL = '/api/motorcycles'
+// const BASE_URL = '/api/motorcycles'
+const BASE_URL = 'https://harley-finder-api.onrender.com/api/motorcycles'
 
 export async function getMotorcycles() {
     try {
