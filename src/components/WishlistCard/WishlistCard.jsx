@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { updateWishlist, deleteWishlist } from '../../utilities/wishlists-api'
 import './WishlistCard.css'
 
@@ -82,7 +82,16 @@ export default function WishlistCard({ wishlist, onEdit }) {
                     <>
                         <span className="card-title">{name}</span>
                         <p>Description: {description}</p>
-                        <p>Motorcycles: {motorcycles.join(', ')}</p>
+                        <p>
+                            Motorcycles: 
+                            <ul>
+                                {motorcycles.map(motorcycle => (
+                                    <li key={motorcycle._id}>
+                                        <Link to={`/motorcycles/${motorcycle._id}`}>{motorcycle.year} {motorcycle.model}</Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </p>
                         <p>Public: {isPublic ? 'Yes' : 'No'}</p>
                         <p>Created By: {createdBy}</p>
                         <div className='card-action'>

@@ -22,7 +22,7 @@ async function getAll(req, res) {
 
 async function getOne(req, res) {
     try {
-        const wishlist = await Wishlist.findById(req.params.id)
+        const wishlist = await Wishlist.findById(req.params.id).populate('motorcycles')
         if (!wishlist) {
             return res.status(404).json({ error: 'Wishlist not found' })
         }
