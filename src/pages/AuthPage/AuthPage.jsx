@@ -16,12 +16,28 @@ export default function AuthPage({ setUser }) {
   }
   
     return (
-      <div>
-        <h1>AuthPage</h1>
-        { userPref === 'signup' ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} /> }
-        <button onClick={handlePref}>
-          { userPref === 'login' ? 'Already a member? Log In' : 'Need an Account? Sign Up' }
-        </button>
-      </div>
+      <div className='container'>
+        <div className='row'>
+            <div className='col s12 m6 offset-m3'>
+                <div className='card orange darken-1' id='login-card'>
+                    <div className='card-content white-text'>
+                        <span className='card-title center' id='welcome-message'>
+                          Welcome to Harley-Finder
+                        </span>
+                        {userPref === 'signup' 
+                            ? <LoginForm setUser={setUser} /> 
+                            : <SignUpForm setUser={setUser} />}
+                    </div>
+                    <div className='card-action'>
+                        <a className='waves-effect waves-light btn black' onClick={handlePref}>
+                            {userPref === 'login' 
+                                ? 'Already a member? Log In' 
+                                : 'Need an Account? Sign Up' }
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     )
   }
