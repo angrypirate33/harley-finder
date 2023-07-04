@@ -29,7 +29,7 @@ export default function AboutPage() {
                         </div>
                         <div className='card-reveal orange'>
                             <span className='card-title black-text text-darken-4'>Database<i className='material-icons right'>close</i></span>
-                            <p className='black-text'>MongoDB - NoSQL database<br/>Mongoose - Object Data Modeling (ODM) library</p>
+                            <p className='black-text'>MongoDB - NoSQL database<br /><br />Mongoose - Object Data Modeling (ODM) library</p>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ export default function AboutPage() {
                         </div>
                         <div className='card-reveal orange'>
                             <span className='card-title grey-text text-darken-4'>Security<i className='material-icons right'>close</i></span>
-                            <p className='black-text'>bcrypt - Password hashing middleware<br/>JWT - Method for securely transmitting information<br/>dotenv - Zero-dependency module</p>
+                            <p className='black-text'>bcrypt - Password hashing middleware<br /><br />JWT - Toekn authentication<br /><br />dotenv - Secret keeper</p>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
                         </div>
                         <div className='card-reveal orange'>
                             <span className='card-title grey-text text-darken-4'>Backend<i className='material-icons right'>close</i></span>
-                            <p className='black-text'>Node.js - Open-source, cross-platform, back-end JavaScript runtime environment<br/>Express - Web application framework for Node.js</p>
+                            <p className='black-text'>Node.js - Open-source, cross-platform, back-end JavaScript runtime environment<br /><br />Express - Web application framework for Node.js</p>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@ export default function AboutPage() {
                         </div>
                         <div className='card-reveal orange'>
                             <span className='card-title grey-text text-darken-4'>Frontend<i className='material-icons right'>close</i></span>
-                            <p className='black-text'>React - JavaScript library for building user interfaces<br/>Materialize - Modern responsive front-end framework<br/>SASS - Preprocessor scripting language that is interpreted into CSS</p>
+                            <p className='black-text'>React - JavaScript library for building user interfaces<br /><br />Materialize - Modern responsive front-end framework</p>
                         </div>
                     </div>
                 </div>
